@@ -41,9 +41,10 @@ usethis::use_build_ignore(
 
 # Prod dependencies -------------------------------------------------------
 
+renv::install("rrapply")
 # renv::install("rappster/confx")
 # usethis::use_dev_package("confx", type = "Imports", remote = "rappster/confx")
 
 # Tests -------------------------------------------------------------------
 
-usethis::use_test("package")
+usethis::use_test("drop")

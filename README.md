@@ -23,6 +23,8 @@ remotes::install_github("rappster/drop")
 
 ## What?
 
+<https://stackoverflow.com/questions/63231071/recursive-remove-null-elements-of-list-of-lists>
+
 ## Why?
 
 ## How?
