@@ -9,6 +9,7 @@
 #' - [drop_null.list()]
 #'
 #' @return ([list]) Cleaned list
+#' @importFrom rrapply rrapply
 #' @export
 #'
 #' @examples
@@ -62,6 +63,7 @@ drop_null.list <- function(x) {
 #' - [drop_empty.list()]
 #'
 #' @return
+#' @importFrom rrapply rrapply
 #' @export
 #'
 #' @examples

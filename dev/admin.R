@@ -45,6 +45,8 @@ renv::install("rrapply")
 # renv::install("rappster/confx")
 # usethis::use_dev_package("confx", type = "Imports", remote = "rappster/confx")
 
+usethis::use_package("rrapply")
+
 # Tests -------------------------------------------------------------------
 
 usethis::use_test("drop")

@@ -1,3 +1,11 @@
+# drop 0.0.0.9002 (2022-04-25)
+
+rrapply
+
+- Added prod dependency `rrapply` (for real this time ;-))
+
+----------
+
 # drop 0.0.0.9001 (2022-04-22)
 
 Tests & README
