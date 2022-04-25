@@ -1,6 +1,6 @@
 # drop 0.0.0.9001 (2022-04-22)
 
-Tests
+Tests & README
 
 - Added prod dependency `rrapply`
 - Added `test-drop.R`

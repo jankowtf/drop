@@ -1,17 +1,41 @@
 # Drop NULL ---------------------------------------------------------------
 
+#' Drop list elements with value `NULL`
+#'
+#' @param x
+#'
+#' @details
+#' See:
+#' - [drop_null.list()]
+#'
+#' @return ([list]) Cleaned list
+#' @export
+#'
+#' @examples
+#' x <- list(
+#'     foo = list(bar = NULL, baz = list(x = 1, y = NULL, z = 3)),
+#'     bar = 2,
+#'     baz = NULL
+#' )
+#' drop_null(x)
 drop_null <- function(x) {
     UseMethod("drop_null")
 }
 
 #' Drop list elements with value `NULL`
 #'
-#' @param x
+#' @param x ([list]) (Nested) list object for which to drop desired values
 #'
 #' @return
 #' @export
 #'
 #' @examples
+#' x <- list(
+#'     foo = list(bar = NULL, baz = list(x = 1, y = NULL, z = 3)),
+#'     bar = 2,
+#'     baz = NULL
+#' )
+#' drop_null(x)
 drop_null.list <- function(x) {
     # x %>% rrapply::rrapply(
     #     f = identity,
@@ -29,18 +53,42 @@ drop_null.list <- function(x) {
 
 # Drop empty --------------------------------------------------------------
 
+#' Drop list elements with empty value
+#'
+#' @param x
+#'
+#' @details
+#' See:
+#' - [drop_empty.list()]
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#' x <- list(
+#'     foo = list(bar = integer(), baz = list(x = 1, y = character(), z = 3)),
+#'     bar = 2,
+#'     baz = logical()
+#' )
+#' drop_empty(x)
 drop_empty <- function(x) {
     UseMethod("drop_empty")
 }
 
 #' Drop list elements with empty value
 #'
-#' @param x
+#' @param x ([list]) (Nested) list object for which to drop desired values
 #'
-#' @return
+#' @return ([list]) Cleaned list
 #' @export
 #'
 #' @examples
+#' x <- list(
+#'     foo = list(bar = integer(), baz = list(x = 1, y = character(), z = 3)),
+#'     bar = 2,
+#'     baz = logical()
+#' )
+#' drop_empty(x)
 drop_empty.list <- function(x) {
     x %>%
         purrr::map(function(.x) {

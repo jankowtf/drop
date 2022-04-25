@@ -14,6 +14,7 @@ knitr::opts_chunk$set(
     out.width = "100%",
     eval = TRUE
 )
+library(magrittr)
 ```
 
 # drop
@@ -34,14 +35,79 @@ remotes::install_github("rappster/drop")
 
 ## What?
 
-https://stackoverflow.com/questions/63231071/recursive-remove-null-elements-of-list-of-lists
+Drop, i.e. remove, certain values in (nested) list structures.
+
+Experimental and scope is "scratch your own itch".
 
 ## Why?
 
-
+Because I always seem to need it at some point in various other projects and always struggled to find/remember previous implementations that worked. 
 
 ## How?
 
-```{r, eval=FALSE}
+By leveraging [rrapply](https://github.com/JorisChau/rrapply) (see [SO post](https://stackoverflow.com/questions/63231071/recursive-remove-null-elements-of-list-of-lists))
+
+```{r, eval=TRUE}
 library(drop)
+```
+
+## Drop NULL values
+
+```{r}
+x <- list(
+    foo = NULL,
+    bar = 1,
+    baz = TRUE,
+    foobar = "a"
+)
+
+x %>% drop_null()
+```
+
+```{r}
+x <- list(
+    list(foo = NULL, bar = 1)
+)
+
+x %>% drop_null()
+```
+
+```{r}
+x <- list(
+    foo = list(bar = NULL, baz = list(x = 1, y = NULL, z = 3)),
+    baz = 2
+)
+
+x %>% drop_null()
+```
+
+## Drop empty values
+
+```{r}
+x <- list(
+    foo = integer(),
+    bar = 1,
+    baz = TRUE,
+    foobar = "a"
+)
+
+x %>% drop_empty()
+```
+
+```{r}
+x <- list(
+    list(
+        foo = character(), bar = 1)
+)
+
+x %>% drop_empty()
+```
+
+```{r}
+x <- list(
+    foo = list(bar = logical(), baz = list(x = 1, y = numeric(), z = 3)),
+    baz = 2
+)
+
+x %>% drop_empty()
 ```
