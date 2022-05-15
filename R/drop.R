@@ -45,6 +45,11 @@ drop_null.list <- function(x) {
     #     how = "prune"
     # )
 
+    # Early exit
+    if (!length(x)) {
+        return(x)
+    }
+
     x %>% rrapply::rrapply(
         condition = Negate(is.null),
         f = function(x) x,
@@ -92,6 +97,11 @@ drop_empty <- function(x) {
 #' )
 #' drop_empty(x)
 drop_empty.list <- function(x) {
+    # Early exit
+    if (!length(x)) {
+        return(x)
+    }
+
     x %>%
         purrr::map(function(.x) {
             if (inherits(.x, "list")) {

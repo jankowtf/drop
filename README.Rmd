@@ -14,6 +14,7 @@ knitr::opts_chunk$set(
     out.width = "100%",
     eval = TRUE
 )
+devtools::load_all()
 library(magrittr)
 ```
 
@@ -81,6 +82,12 @@ x <- list(
 x %>% drop_null()
 ```
 
+Empty input is simply returned
+
+```{r}
+list() %>% drop_null()
+```
+
 ## Drop empty values
 
 ```{r}
@@ -110,4 +117,10 @@ x <- list(
 )
 
 x %>% drop_empty()
+```
+
+Empty input is simply returned
+
+```{r}
+list() %>% drop_empty()
 ```

@@ -95,6 +95,13 @@ x %>% drop_null()
 #> [1] 2
 ```
 
+Empty input is simply returned
+
+``` r
+list() %>% drop_null()
+#> list()
+```
+
 ## Drop empty values
 
 ``` r
@@ -147,4 +154,11 @@ x %>% drop_empty()
 #> 
 #> $baz
 #> [1] 2
+```
+
+Empty input is simply returned
+
+``` r
+list() %>% drop_empty()
+#> list()
 ```

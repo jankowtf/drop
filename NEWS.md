@@ -1,3 +1,11 @@
+# drop 0.0.0.9003 (2022-05-15)
+
+Fixed empty
+
+- Fixed behaviour for empty lists in `drop_empty()` and `drop_null()`
+
+----------
+
 # drop 0.0.0.9002 (2022-04-25)
 
 rrapply
